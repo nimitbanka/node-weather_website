@@ -4,7 +4,7 @@ const hbs =require('hbs')
 const geocode = require('./utils/geocede')
 const currentCondition = require('./utils/currentCondition')
 const app = express()
-
+const port = process.env.PORT || 3000
 //Define paths for Express config
 app.use(express.static(path.join(__dirname, '../public')))
 
@@ -86,6 +86,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('Server is up on port 3000.')
+app.listen(port, ()=>{
+    console.log('Server is up on port ' + port)
 })
